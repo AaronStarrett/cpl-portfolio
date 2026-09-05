@@ -1,0 +1,188 @@
+---
+import { sitePath } from "../../data/paths";
+import Layout from "../../layouts/Layout.astro";
+import StoryPlayer from "../../components/StoryPlayer";
+import Gallery from "../../components/Gallery";
+import Organization from "../../components/Organization";
+import { projects } from "../../data/projects";
+import { primaryAction, type Project } from "../../data/schema";
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+const { project: p } = Astro.props as { project: Project };
+const action = primaryAction(p);
+---
+
+<Layout title={`${p.title} — Cyber Pirate Labs`} description={p.summary}>
+  <div class="project-page">
+    <a class="back-link" href={sitePath("/#work")}>← All work</a>
+    <header class="project-heading">
+      <div>
+        <div class="eyebrow">{p.category} / {p.platform}</div><h1>{p.title}</h1>
+      </div><div>
+        <p>{p.summary}</p><span class="maturity">{p.maturity}</span>
+      </div>
+    </header>
+    {p.story && <StoryPlayer kind={p.story} client:load />}
+    {
+      p.presentation === "external-live-app" && (
+        <section class="external-project">
+          <>
+            <div>
+              <>
+                <span class="eyebrow">THE ACTUAL APPLICATION</span>
+                <h2>{p.title}</h2>
+                <p>{p.solution}</p>
+                <a
+                  class="button"
+                  href={p.deployedUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {action.label} ↗
+                </a>
+                <p class="small">
+                  Opens the existing deployed site in a new tab.
+                </p>
+              </>
+            </div>
+            <div class="external-capabilities">
+              {p.architecture.map((item, i) => (
+                <span>
+                  {String(i + 1).padStart(2, "0")} <b>{item}</b>
+                </span>
+              ))}
+            </div>
+          </>
+        </section>
+      )
+    }
+    {
+      p.presentation === "external-live-app" &&
+        p.launchMode === "embed" &&
+        p.embedAllowed && (
+          <section class="embed-viewer">
+            <>
+              <a href={p.deployedUrl} target="_blank" rel="noopener noreferrer">
+                Open in new tab ↗
+              </a>
+              <p>
+                If this application cannot be displayed here, open its original
+                site.
+              </p>
+              <iframe
+                src={p.deployedUrl}
+                title={`${p.title} deployed application`}
+                loading="lazy"
+                sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+                referrerpolicy="no-referrer"
+              />
+            </>
+          </section>
+        )
+    }
+    <nav class="case-nav" aria-label="Case study sections">
+      <a href="#case-study">The case study ↓</a>{
+        p.screenshots.length > 0 && (
+          <a href="#evidence">Original screenshots ↓</a>
+        )
+      }{
+        p.story === "workforce" && (
+          <a href="#organization">Explore the organization ↓</a>
+        )
+      }{
+        p.repositoryUrl && (
+          <a href={p.repositoryUrl} target="_blank" rel="noopener noreferrer">
+            View code ↗
+          </a>
+        )
+      }
+    </nav>
+    {p.story === "workforce" && <Organization client:visible />}
+    <section class="case-study" id="case-study">
+      <div class="case-section-label">
+        <span class="eyebrow">BEHIND THE BUILD</span><h2>
+          From the problem<br />to the system.
+        </h2>
+      </div><div class="case-copy">
+        <section>
+          <span class="eyebrow">01 / THE PROBLEM</span><h3>
+            What needed to work better.
+          </h3><p>{p.problem}</p>
+        </section><section>
+          <span class="eyebrow">02 / AARON'S CONTRIBUTION</span><h3>
+            Design the connection.
+          </h3><p>{p.contribution}</p>
+        </section><section>
+          <span class="eyebrow">03 / THE SOLUTION</span><h3>
+            A deliberate flow.
+          </h3><p>{p.solution}</p>
+        </section><section>
+          <span class="eyebrow">04 / WHAT THE EVIDENCE SHOWS</span><ul>
+            {p.outcomes.map((o) => <li>{o}</li>)}
+          </ul><div class="evidence-note">
+            <strong>Evidence & context</strong><p>{p.evidence}</p><small
+              >Content reviewed {p.verificationDate}</small
+            >
+          </div>
+        </section><details class="technical">
+          <summary>Explore the architecture & technologies</summary><ol>
+            {p.architecture.map((a) => <li>{a}</li>)}
+          </ol><div class="tags">
+            {p.technologies.map((t) => <span>{t}</span>)}
+          </div>
+        </details>
+      </div>
+    </section>
+    {
+      p.screenshots.length > 0 && (
+        <section id="evidence" class="evidence-section">
+          <>
+            <span class="eyebrow">THE ORIGINAL WORKFLOWS</span>
+            <h2>Explore the actual build.</h2>
+            <p>
+              Complete diagrams, preserved as supplied. Open any image to zoom,
+              pan, and inspect the details.
+            </p>
+            <Gallery images={p.screenshots} client:visible />
+          </>
+        </section>
+      )
+    }
+    {
+      p.videoUrl && (
+        <video
+          class="project-video"
+          controls
+          preload="metadata"
+          src={p.videoUrl}
+        >
+          Your browser cannot play this video.{" "}
+          <a href={p.videoUrl}>Open video</a>
+        </video>
+      )
+    }
+    <section class="related">
+      <span class="eyebrow">KEEP EXPLORING</span><h2>
+        More connections worth seeing.
+      </h2><div>
+        {
+          projects
+            .filter((other) => other.slug !== p.slug)
+            .map((other) => (
+              <a href={sitePath(`/projects/${other.slug}/`)}>
+                <>
+                  <small>{other.platform}</small>
+                  <strong>{other.title}</strong>
+                  <span>→</span>
+                </>
+              </a>
+            ))
+        }
+      </div>
+    </section>
+  </div>
+</Layout>

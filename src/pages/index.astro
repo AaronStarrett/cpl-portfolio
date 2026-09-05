@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+import { sitePath } from "../data/paths";
+const categories = [...new Set(projects.map((p) => p.category))];
+---
+
+<Layout
+  ><section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <span class="green-dot"></span> AARON STARRETT / CYBER PIRATE LABS
+      </div><h1>Complex work.<br /><span>Clearly connected.</span></h1>
+      <p class="hero-intro">
+        I build systems that bring scattered information, tools, and decisions
+        into a clear flow.
+      </p>
+      <a href="#work" class="hero-action">Explore the work <span>↓</span></a>
+      <span class="hero-credit">Built by Aaron Starrett</span>
+    </div><div class="hero-aside brand-stage">
+      <div class="stage-topline">
+        <span class="stage-indicator"></span> CYBER PIRATE LABS <span
+          >01 / THE STUDIO</span>
+      </div>
+      <div class="brand-platform">
+        <div class="platform-lines" aria-hidden="true"></div>
+        <div class="logo-plaque">
+          <img
+            src={sitePath("/images/cpl-shield.png")}
+            width="830"
+            height="595"
+            alt="Cyber Pirate Labs — cyan shield and green pirate emblem"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+      <strong class="stage-statement"
+        >Ideas into systems.<br /><span>Built with intent.</span></strong
+      >
+      <div class="studio-paths" aria-label="Explore a specialty">
+        <a href={sitePath("/projects/ipermit/#walkthrough")}
+          ><i aria-hidden="true">↗</i> Workflows</a
+        >
+        <a href={sitePath("/projects/bea-command-center/#walkthrough")}
+          ><i aria-hidden="true">◈</i> Software</a
+        >
+        <a href={sitePath("/projects/digital-workforce/#walkthrough")}
+          ><i aria-hidden="true">⌘</i> Workforce</a
+        >
+      </div>
+    </div>
+  </section><div class="discipline-strip">
+    <span>PROCESS → POSSIBILITY</span><span
+      >Independent builds & partner delivery</span
+    ><span>SELECTED WORK / 2026</span>
+  </div><section class="work-section" id="work">
+    <div class="work-heading">
+      <div>
+        <span class="eyebrow">THE PORTFOLIO</span><h2>
+          See the systems. Follow the story.
+        </h2>
+      </div><label class="search-box"
+        ><span aria-hidden="true">⌕</span><input
+          id="project-search"
+          type="search"
+          aria-label="Search projects"
+          placeholder="Find a project…"
+        /></label
+      >
+    </div><div class="filters" role="group" aria-label="Filter projects">
+      <button class="filter active" data-filter="all" aria-pressed="true"
+        >All work <span>{projects.length.toString().padStart(2, "0")}</span
+        ></button
+      >{
+        categories.map((c) => (
+          <button class="filter" data-filter={c} aria-pressed="false">
+            {c}
+          </button>
+        ))
+      }
+    </div><div class="project-grid">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div><p id="search-status" class="sr-only" aria-live="polite">
+      {projects.length} projects shown
+    </p><div id="empty-results" hidden>
+      <h3>No projects found.</h3><p>
+        Try a different phrase or category.
+      </p><button id="reset-search">Reset search</button>
+    </div>
+  </section><section class="closing-note">
+    <span class="eyebrow">HAVE A PROCESS IN MIND?</span><h2>
+      Let's make the next<br />step a useful one.
+    </h2><div>
+      <p>
+        From a focused workflow to a custom workspace, CPL builds for direct
+        customers and with delivery partners. Implementation and ongoing support
+        are scoped for each engagement.
+      </p><a class="button" href="mailto:Sales@CyberPirateLabs.com"
+        >Start a conversation ↗</a
+      >
+    </div>
+  </section></Layout
+>
+<script>
+  let category = "all";
+  const search = document.querySelector<HTMLInputElement>("#project-search")!;
+  const cards = [...document.querySelectorAll<HTMLElement>(".project-card")];
+  const filters = [...document.querySelectorAll<HTMLButtonElement>(".filter")];
+  function update() {
+    let count = 0;
+    for (const card of cards) {
+      const show =
+        (category === "all" || card.dataset.category === category) &&
+        card.dataset.search!.includes(search.value.trim().toLowerCase());
+      card.hidden = !show;
+      if (show) count++;
+    }
+    document.getElementById("search-status")!.textContent =
+      `${count} projects shown`;
+    document.getElementById("empty-results")!.hidden = count > 0;
+    for (const button of filters) {
+      const active = button.dataset.filter === category;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    }
+  }
+  search.addEventListener("input", update);
+  filters.forEach((b) =>
+    b.addEventListener("click", () => {
+      category = b.dataset.filter!;
+      update();
+    }),
+  );
+  document.getElementById("reset-search")!.addEventListener("click", () => {
+    search.value = "";
+    category = "all";
+    update();
+    search.focus();
+  });
+</script>

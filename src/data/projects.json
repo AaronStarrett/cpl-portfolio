@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "ipermit",
+    "title": "iPermit",
+    "summary": "From a new job to a city-ready permit payload. One clear path through a complex process.",
+    "category": "Workflow automation",
+    "tags": ["Zoho", "n8n", "UiPath"],
+    "featuredOrder": 1,
+    "platform": "Workflow",
+    "maturity": "Workflow architecture · Dublin pilot",
+    "presentation": "animated-story",
+    "story": "ipermit",
+    "problem": "Permit work starts with scattered job and contractor information. Each city needs a different set of fields, formats, and checks.",
+    "contribution": "Aaron designed the parent intake and city-router workflow, the Dublin child workflow, and the data preparation architecture for a UiPath handoff.",
+    "solution": "n8n receives Zoho API data, normalizes job information, validates the company, enriches contractor details, and routes a complete payload to the city-specific workflow. Review branches catch incomplete information and unsupported routes.",
+    "outcomes": [
+      "Parent intake and city-router workflows are documented in the supplied screenshots.",
+      "Dublin-specific mapping, PDF-fill preparation, and a prepared UiPath queue item are visible.",
+      "Additional city workflows can extend the architecture; Dublin is the only city shown."
+    ],
+    "technologies": [
+      "Zoho API",
+      "n8n",
+      "UiPath handoff",
+      "Structured payloads"
+    ],
+    "architecture": [
+      "Zoho API intake",
+      "Split and normalize jobs",
+      "Validate company and identify city",
+      "Retrieve and merge contractor data",
+      "Validate required fields",
+      "Route to Dublin child workflow",
+      "Map permit, fee, and PDF fields",
+      "Prepare UiPath queue item"
+    ],
+    "evidence": "The screenshots document payload and queue-item preparation. They do not independently establish queue submission, a completed UiPath run, or production permit processing.",
+    "screenshots": [
+      {
+        "src": "/images/ipermit-parent-workflow.png",
+        "alt": "Complete iPermit Job Intake and City Router workflow with validation and city branches",
+        "caption": "Parent workflow — Zoho intake, data checks, contractor enrichment, and city routing."
+      },
+      {
+        "src": "/images/ipermit-dublin-workflow.png",
+        "alt": "Complete Dublin child workflow including payload preparation and review paths",
+        "caption": "Dublin child workflow — city configuration, payload and PDF preparation, readiness, and queue-item preparation."
+      },
+      {
+        "src": "/images/ipermit-parent-editor.png",
+        "alt": "Original n8n editor view of the iPermit parent workflow",
+        "caption": "Supporting evidence — the parent workflow in the n8n editor."
+      },
+      {
+        "src": "/images/ipermit-dublin-editor.png",
+        "alt": "Original n8n editor view of the Dublin child workflow",
+        "caption": "Supporting evidence — the Dublin workflow in the n8n editor."
+      }
+    ],
+    "verificationDate": "2026-09-05"
+  },
+  {
+    "slug": "bea-command-center",
+    "title": "BEA Operations Command Center",
+    "summary": "An operator workspace where a question becomes a report, a reviewed draft, and a clear next action.",
+    "category": "Operational software",
+    "tags": ["AI interface", "Human approval", "Operations"],
+    "featuredOrder": 2,
+    "platform": "Operational Software",
+    "maturity": "Full-version beta · illustrated journey",
+    "presentation": "animated-story",
+    "story": "bea",
+    "problem": "An owner needs to move between customer context, reports, and follow-up work without losing the thread of a decision.",
+    "contribution": "Aaron designed and built the Command Center's operator experience, including the conversation workspace, contextual panels, and approval-oriented action flow.",
+    "solution": "A conversation panel and a larger working panel share one surface. The orb and command area make room for a report, while the operator keeps the explanation and next action in context.",
+    "outcomes": [
+      "The visual reconstruction follows verified BEA product references: light glass surfaces, a collapsible navigation rail, and a 36/64 conversation-to-workspace split.",
+      "The storyboard explains an intended operator journey using fictional data and scripted responses.",
+      "Company records describe a free full-version beta; this case study does not establish customer acceptance or measured business results."
+    ],
+    "technologies": [
+      "Operational workspace",
+      "Conversation UI",
+      "Contextual reports",
+      "Human approval"
+    ],
+    "architecture": [
+      "Operations overview",
+      "Customer context",
+      "Ask BEA",
+      "Report workspace",
+      "Draft next action",
+      "Human review",
+      "Activity record"
+    ],
+    "evidence": "This original representation is grounded in verified product specifications and visual references. It is not the real application. Illustrated AI responses and completion states do not establish live integrations, email delivery, or actual execution.",
+    "screenshots": [],
+    "verificationDate": "2026-09-05"
+  },
+  {
+    "slug": "digital-workforce",
+    "title": "CPL Digital Workforce",
+    "summary": "A Grok-based organization with clear roles, deliberate handoffs, and a human at the helm.",
+    "category": "Digital workforce",
+    "tags": ["Grok", "Organization design", "Shared knowledge"],
+    "featuredOrder": 3,
+    "platform": "Digital Workforce",
+    "maturity": "Configured architecture · task-scoped activation",
+    "presentation": "animated-story",
+    "story": "workforce",
+    "problem": "Separate AI conversations need shared context, clear responsibility, and an explicit point for human decisions.",
+    "contribution": "Aaron structured digital-employee identities, role charters, reporting relationships, shared company knowledge, and operating policies into a documented organization.",
+    "solution": "A digital chief of staff routes a scoped request to a department manager. Specialists contribute, the manager consolidates, Aaron reviews, and shared records are updated in a separate stage before the organization returns to standby.",
+    "outcomes": [
+      "The documented organization includes executive, revenue, growth, product, delivery, client experience, and finance roles.",
+      "Filed research and planning outputs demonstrate role-based research, consolidation, and documentation.",
+      "Some specialists are still initializing and additional roles are planned. Configured identities remain dormant until a scoped assignment."
+    ],
+    "technologies": [
+      "Grok",
+      "Notion",
+      "Google Drive",
+      "Role charters",
+      "Human oversight"
+    ],
+    "architecture": [
+      "Aaron · final authority",
+      "CEO Bot · routing",
+      "Department manager",
+      "Scoped specialists",
+      "Consolidated recommendation",
+      "Owner review",
+      "Jack · separate knowledge update",
+      "Return to standby"
+    ],
+    "evidence": "Architecture and filed outputs were reviewed September 5, 2026; underlying operating records are dated August 30. Role titles and tool availability do not prove live outreach, booked appointments, launched operations, or revenue.",
+    "screenshots": [],
+    "verificationDate": "2026-09-05"
+  },
+  {
+    "slug": "starrett-home-improvement",
+    "title": "Starrett Home Improvement",
+    "summary": "The actual Starrett Roofing Lead Command Center, built with ChatGPT Sites.",
+    "category": "Browser applications",
+    "tags": ["GPT Site", "Lead workspace", "Pipeline"],
+    "featuredOrder": 4,
+    "platform": "GPT Site",
+    "maturity": "Deployed application",
+    "presentation": "external-live-app",
+    "problem": "Researched prospects need an organized workspace to prioritize follow-ups and see the next step.",
+    "contribution": "Aaron's ChatGPT Sites lead-generation project brings market, priority, score, status, and follow-up controls into a single browser workspace.",
+    "solution": "The existing Starrett Roofing Lead Command Center provides a pipeline overview, lead search, market filters, and row or card views. This portfolio opens that deployed application directly.",
+    "outcomes": [
+      "The deployed project's identity and interface were verified against the actual Starrett Roofing Lead Command Center.",
+      "The interface includes search, market and pipeline filters, follow-up sorting, and row/card views."
+    ],
+    "technologies": [
+      "ChatGPT Sites",
+      "Browser application",
+      "Pipeline workspace"
+    ],
+    "architecture": [
+      "Pipeline overview",
+      "Market and status filters",
+      "Search and prioritize",
+      "Follow-up workspace"
+    ],
+    "evidence": "Public access is configured in the Sites account. Reading the interface does not establish lead capture, notifications, booked work, or revenue. No forms were submitted during this review.",
+    "screenshots": [],
+    "deployedUrl": "https://starrett-roofing-leads.astarrett.chatgpt.site",
+    "access": "public",
+    "launchMode": "new-tab",
+    "embedAllowed": false,
+    "verificationDate": "2026-09-05"
+  }
+]

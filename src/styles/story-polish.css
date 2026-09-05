@@ -1,0 +1,276 @@
+.permit-track {
+  position: relative;
+  padding-bottom: 37px;
+}
+.traveling-payload {
+  position: absolute;
+  bottom: 6px;
+  transform: translateX(-50%);
+  transition: left 1.1s ease-in-out;
+  background: #fff;
+  border: 1px solid #b7dbe3;
+  border-radius: 15px;
+  padding: 4px 10px;
+  font-size: 9px;
+  color: #14728a;
+  white-space: nowrap;
+}
+.traveling-payload span {
+  margin-left: 7px;
+}
+.evidence-reveal {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid var(--line);
+  padding: 12px 28px;
+  background: #fafdfe;
+}
+.evidence-reveal > img {
+  width: 125px;
+  height: 42px;
+  object-fit: contain;
+  background: #111117;
+  border-radius: 3px;
+}
+.evidence-reveal > span {
+  font-size: 12px;
+}
+.evidence-reveal small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.hero {
+  padding-top: 55px;
+  padding-bottom: 45px;
+}
+.work-section {
+  padding-top: 48px;
+}
+.scene-work .eyebrow {
+  font-size: 11px;
+}
+.scene-work h3 {
+  font-size: 28px;
+}
+.job-card dl > div {
+  font-size: 13px;
+  padding: 8px 0;
+}
+.data-panel code {
+  font-size: 12px;
+}
+.flow-node strong {
+  font-size: 14px;
+}
+.flow-node small {
+  font-size: 10px;
+}
+.scene-nav button {
+  font-size: 12px;
+}
+.scene-caption p {
+  font-size: 14px;
+}
+.player-topline {
+  font-size: 12px;
+}
+.canvas-footer {
+  font-size: 10px;
+}
+.checks li {
+  font-size: 13px;
+}
+.prep-stack > div {
+  font-size: 13px;
+}
+.route-choice {
+  font-size: 15px;
+}
+.route-choice small {
+  font-size: 11px;
+}
+.data-panel small {
+  font-size: 11px;
+}
+.status-dot {
+  font-size: 11px;
+}
+.person strong {
+  font-size: 14px;
+}
+.person small {
+  font-size: 11px;
+}
+.specialist strong {
+  font-size: 13px;
+}
+.specialist small {
+  font-size: 11px;
+}
+.assignment-card strong {
+  font-size: 15px;
+}
+.user-bubble,
+.assistant-bubble {
+  font-size: 12px;
+}
+.report-section p,
+.draft-page > p {
+  font-size: 12px;
+}
+.report-section b {
+  font-size: 13px;
+}
+.bea-composer {
+  font-size: 10px;
+}
+.overview-content > .eyebrow {
+  font-size: 9px;
+}
+.customer-row b {
+  font-size: 12px;
+}
+.customer-row small {
+  font-size: 10px;
+}
+.metric-row span {
+  font-size: 10px;
+}
+.bea-top {
+  font-size: 12px;
+}
+.is-paused .traveling-payload {
+  transition: none;
+}
+.brand-artwork {
+  width: 45px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.brand-monogram {
+  display: none;
+}
+@media (max-width: 850px) and (min-width: 621px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .hero h1 {
+    font-size: 37px;
+  }
+  .hero-aside > p {
+    font-size: 14px;
+  }
+  .work-heading {
+    align-items: start;
+  }
+  .work-heading h2 {
+    font-size: 24px;
+    max-width: 340px;
+  }
+  .scene-nav button {
+    font-size: 12px;
+  }
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 35px;
+  }
+}
+@media (max-width: 620px) {
+  .hero {
+    padding: 35px 22px 30px;
+  }
+  .work-section {
+    padding-top: 32px;
+  }
+  .scene-work h3 {
+    font-size: 23px;
+  }
+  .scene-work .eyebrow {
+    font-size: 10px;
+  }
+  .flow-node strong {
+    font-size: 12px;
+  }
+  .flow-node small {
+    font-size: 8px;
+  }
+  .data-panel code {
+    font-size: 11px;
+  }
+  .job-card dl > div {
+    font-size: 12px;
+  }
+  .route-choice {
+    font-size: 12px;
+  }
+  .route-choice small {
+    font-size: 10px;
+  }
+  .prep-stack > div {
+    font-size: 12px;
+  }
+  .person strong {
+    font-size: 13px;
+  }
+  .person small {
+    font-size: 10px;
+  }
+  .specialist strong {
+    font-size: 12px;
+  }
+  .specialist small {
+    font-size: 10px;
+  }
+  .assignment-card strong {
+    font-size: 13px;
+  }
+  .canvas-footer {
+    font-size: 10px;
+  }
+  .evidence-reveal {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .evidence-reveal > img {
+    width: 95px;
+    height: 38px;
+  }
+  .evidence-reveal > span {
+    font-size: 11px;
+  }
+  .evidence-reveal small {
+    font-size: 10px;
+  }
+  .report-section p,
+  .draft-page > p {
+    font-size: 13px;
+  }
+  .bea-composer {
+    font-size: 11px;
+  }
+  .customer-row b {
+    font-size: 13px;
+  }
+  .customer-row small {
+    font-size: 11px;
+  }
+  .metric-row span {
+    font-size: 11px;
+  }
+  .bea-top {
+    font-size: 11px;
+  }
+  .brand-artwork {
+    width: 38px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .traveling-payload {
+    transition: none;
+  }
+}

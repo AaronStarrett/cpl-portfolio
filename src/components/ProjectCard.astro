@@ -1,0 +1,177 @@
+---
+import { sitePath } from "../data/paths";
+import { primaryAction, type Project } from "../data/schema";
+const { project: p } = Astro.props as { project: Project };
+const action = primaryAction(p);
+---
+
+<article
+  class:list={["project-card", `card-${p.slug}`]}
+  data-category={p.category}
+  data-search={`${p.title} ${p.summary} ${p.tags.join(" ")}`.toLowerCase()}
+>
+  <a
+    class="project-art"
+    href={action.href}
+    target={action.external ? "_blank" : undefined}
+    rel={action.external ? "noopener noreferrer" : undefined}
+    aria-label={`${action.label}: ${p.title}`}
+  >
+    <div class="art-label">
+      <span>{p.platform}</span><span
+        >{
+          p.story
+            ? "ANIMATED STORY"
+            : p.presentation === "external-live-app"
+              ? "DEPLOYED APP"
+              : "CASE STUDY"
+        } ↗</span
+      >
+    </div>
+    {
+      p.story === "ipermit" ? (
+        <div class="permit-thumbnail">
+          <>
+            <div class="thumb-node zoho">
+              Z<small>Zoho</small>
+            </div>
+            <div class="thumb-link">
+              <>
+                <span>Job data</span>
+                <i />
+              </>
+            </div>
+            <div class="thumb-node n8n">
+              ⌘<small>n8n</small>
+            </div>
+            <div class="thumb-link">
+              <>
+                <span>City payload</span>
+                <i />
+              </>
+            </div>
+            <div class="thumb-node uipath">
+              U<small>UiPath</small>
+            </div>
+            <div class="thumb-route">
+              DUBLIN PILOT <span>✓ Ready for preparation</span>
+            </div>
+          </>
+        </div>
+      ) : p.story === "bea" ? (
+        <div class="bea-thumbnail">
+          <>
+            <div class="mini-bea-header">
+              <b>BEA</b> Operations Command Center
+            </div>
+            <div class="mini-bea-panels">
+              <>
+                <div class="mini-conversation">
+                  <>
+                    <div class="orb">
+                      <>
+                        <div class="orb-ring" />
+                        <span>✦</span>
+                      </>
+                    </div>
+                    <strong>Ask BEA</strong>
+                    <div class="mini-composer">Your work, in context. ↑</div>
+                  </>
+                </div>
+                <div class="mini-report">
+                  <>
+                    <span>WORKSPACE</span>
+                    <h3>
+                      From a question.
+                      <br />
+                      To a clear next step.
+                    </h3>
+                    <div class="mini-row">
+                      Cedar House <span>Review →</span>
+                    </div>
+                    <div class="mini-row">
+                      Site report <span>Open ↗</span>
+                    </div>
+                    <span class="mini-approval">Human approval, built in.</span>
+                  </>
+                </div>
+              </>
+            </div>
+          </>
+        </div>
+      ) : p.story === "workforce" ? (
+        <div class="workforce-thumbnail">
+          <>
+            <div class="thumb-person owner">
+              Aaron <span>Human authority</span>
+            </div>
+            <i />
+            <div class="thumb-person">
+              CEO Bot <span>Route & coordinate</span>
+            </div>
+            <i />
+            <div class="thumb-departments">
+              <>
+                <span>Ventures</span>
+                <span>Delivery</span>
+                <span>Growth</span>
+              </>
+            </div>
+            <div class="thumb-knowledge">
+              Shared knowledge <span>↔</span> Clear handoffs
+            </div>
+          </>
+        </div>
+      ) : p.slug === "starrett-home-improvement" ? (
+        <div class="starrett-thumbnail">
+          <>
+            <div class="starrett-wordmark">
+              STARRETT<small>HOME IMPROVEMENT</small>
+            </div>
+            <span class="eyebrow">LEAD COMMAND CENTER</span>
+            <h3>
+              A workspace for
+              <br />
+              the next opportunity.
+            </h3>
+            <div class="app-link-pill">
+              Open the actual application <span>↗</span>
+            </div>
+          </>
+        </div>
+      ) : (
+        <div class="generic-thumbnail">
+          <>
+            <span class="eyebrow">{p.platform}</span>
+            <h3>{p.title}</h3>
+            <p>{p.summary}</p>
+            <span>{action.label} →</span>
+          </>
+        </div>
+      )
+    }
+    <span class="art-launch">{p.story ? "▶" : "↗"}</span>
+  </a><div class="project-meta">
+    <span class="project-number">0{p.featuredOrder}</span><div>
+      <div class="tags">{p.tags.map((t) => <span>{t}</span>)}</div><h2>
+        <a href={sitePath(`/projects/${p.slug}/`)}>{p.title}</a>
+      </h2><p>{p.summary}</p><div class="project-actions">
+        <a
+          class="primary-text"
+          href={action.href}
+          target={action.external ? "_blank" : undefined}
+          rel={action.external ? "noopener noreferrer" : undefined}
+          >{action.label} <span>{action.external ? "↗" : "→"}</span></a
+        ><a href={sitePath(`/projects/${p.slug}/#case-study`)}
+          >View case study</a
+        >{
+          p.repositoryUrl && (
+            <a href={p.repositoryUrl} target="_blank" rel="noopener noreferrer">
+              View code ↗
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</article>
