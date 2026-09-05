@@ -2,6 +2,8 @@
 
 A static portfolio for Aaron Starrett and Cyber Pirate Labs. Built with Astro, TypeScript, and React islands for three accessible browser-rendered stories. Four initial projects are maintained in a validated content registry.
 
+[Open the portfolio](https://cpl-portfolio.pages.dev) · [Public source](https://github.com/AaronStarrett/cpl-portfolio)
+
 ## Run locally
 
 Use Node **24.19.0** (also recorded in `.node-version`).

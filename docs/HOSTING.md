@@ -1,5 +1,9 @@
 # Hosting and publication
 
+Production: [cpl-portfolio.pages.dev](https://cpl-portfolio.pages.dev). Cloudflare Pages is connected to [AaronStarrett/cpl-portfolio](https://github.com/AaronStarrett/cpl-portfolio), with automatic deployments from `main`. The first Git-connected deployment succeeded September 5, 2026. The configured `SITE_URL` is `https://cpl-portfolio.pages.dev`, and `BASE_PATH` is `/`.
+
+The public [social-preview image](https://cpl-portfolio.pages.dev/images/social-preview.png) is used by the Open Graph metadata on every case study.
+
 ## Chosen destination: Cloudflare Pages with Git integration
 
 Create a **Pages** project using **Import an existing Git repository** in the authenticated Cloudflare account. Select only the new `AaronStarrett/cpl-portfolio` repository when granting GitHub application access. Use:
