@@ -44,7 +44,7 @@ Cloudflare Pages with Git integration is the chosen hosting destination. Cloudfl
 
 Only portfolio code and cleared public assets belong in this repository. Private source checkouts, customer data, the build brief, and research notes are excluded. No private application code was copied. No license grant is implied by repository visibility.
 
-The site uses the approved CPL light palette and the existing shield artwork without altering its proportions or pixels. The supplied shield has a dark background; the page remains light. The social card uses a text wordmark and a generated workflow illustration. The four supplied iPermit screenshots are unchanged. Captions describe exactly what their evidence establishes.
+The site uses the approved CPL light palette and the existing dark shield-and-wordmark logo without altering its proportions or pixels. Its dark navy panel gives the green logo contrast while the page remains light. The social card uses a text wordmark and a generated workflow illustration. The four supplied iPermit screenshots are unchanged. Captions describe exactly what their evidence establishes.
 
 ## Accessibility and motion
 
