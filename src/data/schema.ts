@@ -38,7 +38,7 @@ export const projectSchema = z
     showEvidenceSection: z.boolean().default(true),
     technologies: z.array(z.string()),
     architecture: z.array(z.string()),
-    evidence: z.string().min(10),
+    evidence: z.string().min(10).optional(),
     screenshots: z.array(
       z.object({
         src: z

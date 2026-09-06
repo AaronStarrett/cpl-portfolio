@@ -135,12 +135,12 @@ const action = primaryAction(p);
                     <li>{o}</li>
                   ))}
                 </ul>
-                <div class="evidence-note">
-                  <>
+                {p.evidence && (
+                  <div class="evidence-note">
                     <strong>Evidence & context</strong>
                     <p>{p.evidence}</p>
-                  </>
-                </div>
+                  </div>
+                )}
               </>
             </section>
           )
