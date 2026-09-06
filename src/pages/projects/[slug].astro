@@ -2,6 +2,7 @@
 import { sitePath } from "../../data/paths";
 import Layout from "../../layouts/Layout.astro";
 import StoryPlayer from "../../components/StoryPlayer";
+import ExtraWorkApprovalWalkthrough from "../../components/ExtraWorkApprovalWalkthrough";
 import Gallery from "../../components/Gallery";
 import WorkforceExperience from "../../components/workforce/WorkforceExperience";
 import { projects } from "../../data/projects";
@@ -37,6 +38,8 @@ const product = productAction(p);
     {
       p.story === "workforce" ? (
         <WorkforceExperience client:load />
+      ) : p.story === "extra-work-approval" ? (
+        <ExtraWorkApprovalWalkthrough client:load />
       ) : (
         p.story && <StoryPlayer kind={p.story} client:load />
       )

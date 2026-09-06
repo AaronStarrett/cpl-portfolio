@@ -1,3 +1,4 @@
+import { extraWorkApprovalStories } from "./extra-work-approval-stories";
 export type Scene = {
   title: string;
   caption: string;
@@ -15,6 +16,7 @@ const scene = (title: string, caption: string, duration = 9000): Scene => ({
   duration,
 });
 export const stories: Record<string, Story> = {
+  ...extraWorkApprovalStories,
   "job-intake-cleaner": {
     renderer: "job-intake-cleaner",
     label: "Fictional electrical request · scripted walkthrough · no live AI call",
