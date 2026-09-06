@@ -125,15 +125,26 @@ const action = primaryAction(p);
           <span class="eyebrow">03 / THE SOLUTION</span><h3>
             A deliberate flow.
           </h3><p>{p.solution}</p>
-        </section><section>
-          <span class="eyebrow">04 / WHAT THE EVIDENCE SHOWS</span><ul>
-            {p.outcomes.map((o) => <li>{o}</li>)}
-          </ul><div class="evidence-note">
-            <strong>Evidence & context</strong><p>{p.evidence}</p><small
-              >Content reviewed {p.verificationDate}</small
-            >
-          </div>
-        </section><details class="technical">
+        </section>{
+          p.showEvidenceSection && (
+            <section>
+              <>
+                <span class="eyebrow">04 / WHAT THE EVIDENCE SHOWS</span>
+                <ul>
+                  {p.outcomes.map((o) => (
+                    <li>{o}</li>
+                  ))}
+                </ul>
+                <div class="evidence-note">
+                  <>
+                    <strong>Evidence & context</strong>
+                    <p>{p.evidence}</p>
+                  </>
+                </div>
+              </>
+            </section>
+          )
+        }<details class="technical">
           <summary>Explore the architecture & technologies</summary><ol>
             {p.architecture.map((a) => <li>{a}</li>)}
           </ol><div class="tags">

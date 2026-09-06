@@ -35,6 +35,7 @@ export const projectSchema = z
     contribution: z.string().min(10),
     solution: z.string().min(10),
     outcomes: z.array(z.string().min(10)).min(1),
+    showEvidenceSection: z.boolean().default(true),
     technologies: z.array(z.string()),
     architecture: z.array(z.string()),
     evidence: z.string().min(10),

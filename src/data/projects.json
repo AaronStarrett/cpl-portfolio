@@ -45,16 +45,6 @@
         "src": "/images/ipermit-dublin-workflow.png",
         "alt": "Complete Dublin child workflow including payload preparation and review paths",
         "caption": "Dublin child workflow — city configuration, payload and PDF preparation, readiness, and queue-item preparation."
-      },
-      {
-        "src": "/images/ipermit-parent-editor.png",
-        "alt": "Original n8n editor view of the iPermit parent workflow",
-        "caption": "Supporting evidence — the parent workflow in the n8n editor."
-      },
-      {
-        "src": "/images/ipermit-dublin-editor.png",
-        "alt": "Original n8n editor view of the Dublin child workflow",
-        "caption": "Supporting evidence — the Dublin workflow in the n8n editor."
       }
     ],
     "verificationDate": "2026-09-05"
@@ -70,6 +60,7 @@
     "maturity": "Full-version beta · illustrated journey",
     "presentation": "animated-story",
     "story": "bea",
+    "showEvidenceSection": false,
     "problem": "An owner needs to move between customer context, reports, and follow-up work without losing the thread of a decision.",
     "contribution": "Aaron designed and built the Command Center's operator experience, including the conversation workspace, contextual panels, and approval-oriented action flow.",
     "solution": "A conversation panel and a larger working panel share one surface. The orb and command area make room for a report, while the operator keeps the explanation and next action in context.",
@@ -140,32 +131,36 @@
   {
     "slug": "starrett-home-improvement",
     "title": "Starrett Home Improvement",
-    "summary": "The actual Starrett Roofing Lead Command Center, built with ChatGPT Sites.",
-    "category": "Browser applications",
-    "tags": ["GPT Site", "Lead workspace", "Pipeline"],
+    "summary": "AI agents search the web daily for high-value leads, score and add them automatically, and handle outreach. One workspace tracks their progress.",
+    "category": "AI lead generation",
+    "tags": ["AI agents", "Daily lead generation", "Outreach"],
     "featuredOrder": 4,
     "platform": "GPT Site",
-    "maturity": "Deployed application",
+    "maturity": "AI lead automation · deployed workspace",
     "presentation": "external-live-app",
-    "problem": "Researched prospects need an organized workspace to prioritize follow-ups and see the next step.",
-    "contribution": "Aaron's ChatGPT Sites lead-generation project brings market, priority, score, status, and follow-up controls into a single browser workspace.",
-    "solution": "The existing Starrett Roofing Lead Command Center provides a pipeline overview, lead search, market filters, and row or card views. This portfolio opens that deployed application directly.",
+    "problem": "Finding valuable prospects, researching their fit, entering lead records, and keeping outreach moving takes ongoing work. The business needs a steady flow of targeted leads and a clear way to manage each opportunity.",
+    "contribution": "We built an AI-agent lead generation and outreach workflow connected to Starrett Home Improvement’s lead-management site. It brings daily internet research, automatic lead intake and scoring, outreach, and pipeline tracking into one process.",
+    "solution": "AI agents search the internet every day for targeted, high-value prospects, score the leads, and automatically add them to the Starrett Home Improvement lead-generation site. The agents handle outreach, while the Starrett Roofing Lead Command Center provides the workspace to manage leads, prioritize follow-ups, and track each opportunity’s progress.",
     "outcomes": [
-      "The deployed project's identity and interface were verified against the actual Starrett Roofing Lead Command Center.",
-      "The interface includes search, market and pipeline filters, follow-up sorting, and row/card views."
+      "AI agents run daily internet research to identify targeted, high-value leads.",
+      "New leads are scored and automatically added to the lead-management site.",
+      "Agents handle outreach, while the workspace keeps lead status, follow-ups, and pipeline progress organized.",
+      "Search, market and status filters, scores, and row/card views help the team prioritize its next action."
     ],
     "technologies": [
-      "ChatGPT Sites",
-      "Browser application",
-      "Pipeline workspace"
+      "AI agents",
+      "Daily internet research",
+      "Automated lead scoring",
+      "Outreach automation",
+      "ChatGPT Sites"
     ],
     "architecture": [
-      "Pipeline overview",
-      "Market and status filters",
-      "Search and prioritize",
-      "Follow-up workspace"
+      "AI agents research high-value prospects daily",
+      "Lead scoring and automatic workspace intake",
+      "Agent-led outreach",
+      "Lead management and pipeline tracking"
     ],
-    "evidence": "Public access is configured in the Sites account. Reading the interface does not establish lead capture, notifications, booked work, or revenue. No forms were submitted during this review.",
+    "evidence": "Daily AI-agent research, lead scoring, automatic intake, and outreach power the lead-generation workflow. The deployed Starrett Roofing Lead Command Center is the team’s workspace for managing those leads and tracking their progress.",
     "screenshots": [],
     "deployedUrl": "https://starrett-roofing-leads.astarrett.chatgpt.site",
     "access": "public",

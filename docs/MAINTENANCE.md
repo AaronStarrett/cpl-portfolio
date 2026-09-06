@@ -20,6 +20,8 @@ There is no hard-coded project maximum. Hosting quotas still apply. A fifth GPT 
 
 Set `maturity` to a truthful description: prototype, configured architecture, beta, deployed application, or another evidence-supported state. An animation is a presentation choice, not proof that a feature is implemented or unfinished.
 
+Set `showEvidenceSection: false` to omit a project's optional fourth case-study section, including its outcomes and context note. It defaults to visible. `verificationDate` remains maintenance metadata; the site does not display editorial review-date labels.
+
 ## Story configuration
 
 The shared player derives timing, scene count, progress, and controls from story data. iPermit and BEA use dedicated renderers. A new story can use the generic `process` renderer with scene titles, captions, durations in milliseconds, and optional `nodes` arrays. Add a story key and one content entry; no component edits are needed for that mode. The digital workforce has its own connected experience described below.

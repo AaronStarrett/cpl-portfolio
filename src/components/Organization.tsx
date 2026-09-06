@@ -138,8 +138,8 @@ export default function Organization() {
         </div>
       </div>
       <p className="source-date">
-        Documented architecture dated August 30, 2026. Records and filed outputs
-        reviewed September 5, 2026. No bots are activated from this portfolio.
+        Documented architecture dated August 30, 2026. No bots are activated
+        from this portfolio.
       </p>
     </section>
   );
