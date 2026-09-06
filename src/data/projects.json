@@ -219,5 +219,57 @@
     "launchMode": "new-tab",
     "embedAllowed": false,
     "verificationDate": "2026-09-06"
+  },
+  {
+    "slug": "job-report-builder",
+    "title": "Before-and-After Job Report Builder",
+    "summary": "Turn scattered job photos and notes into an ordered visual report, with local editing and browser printing or Save as PDF.",
+    "category": "Operational software",
+    "tags": [
+      "Operations",
+      "Human review"
+    ],
+    "featuredOrder": 6,
+    "platform": "GitHub App",
+    "maturity": "Public application · browser-session reports",
+    "presentation": "external-live-app",
+    "problem": "Job photographs and work notes are often scattered across a crew's handoff. A customer needs a clear account of what was documented, what was done, and which items remain.",
+    "contribution": "CPL designed and built the browser-only photo intake, report editor, image organization, work checklist, live document preview, and printable report template.",
+    "solution": "Visitors can load a clearly labeled fictional sample or select their own local photos, organize Before / During / After groups, edit captions and work details, choose a comparison pair, and prepare a report through the browser print dialog. Photos and job details stay in the current browser session.",
+    "outcomes": [
+      "An ordered photo log preserves complete image frames and includes the user's current captions and work notes.",
+      "Completed-work sections contain checked items only, while remaining items and incomplete-report labels remain visible.",
+      "One HTML report supports live preview and browser printing or Save as PDF, with selectable text and Letter/A4 layouts."
+    ],
+    "showEvidenceSection": true,
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Cloudflare Workers Static Assets",
+      "Browser image processing"
+    ],
+    "architecture": [
+      "Start blank or load a fictional sample",
+      "Check and normalize supported local images",
+      "Organize photos, captions, and work notes",
+      "Preview the current HTML report",
+      "Use the browser to print or save as PDF"
+    ],
+    "screenshots": [
+      {
+        "src": "/images/job-report-builder-demo.png",
+        "alt": "Job Report Builder showing fictional before and during photo controls beside a current report preview and illustrative before-and-after comparison",
+        "caption": "Actual deployed application with a fictional pressure-washing sample. The original illustrations demonstrate the workflow; they are not customer job photographs."
+      }
+    ],
+    "access": "public",
+    "launchMode": "new-tab",
+    "embedAllowed": false,
+    "verificationDate": "2026-09-06",
+    "deployedUrl": "https://cpl-job-report-builder.astarrett.workers.dev/",
+    "repositoryUrl": "https://github.com/AaronStarrett/cpl-job-report-builder",
+    "repositoryPublic": true,
+    "evidence": "Automated checks and anonymous desktop/mobile viewport tests exercised photo organization, current edits, sample disclosures, and printing. Chromium-generated Letter, A4, and difficult-report PDFs were inspected page by page; desktop Chrome print preview and cancellation were checked separately. The bundled sample uses original illustrations of fictional scenes, not photographs of completed customer work."
   }
 ]
