@@ -1,4 +1,5 @@
 import { sitePath } from "../data/paths";
+import IntakeScene from "./IntakeScene";
 import { useState, useEffect } from "react";
 import type { Scene } from "../data/stories";
 type Props = { step: number; branch?: string };
@@ -640,12 +641,15 @@ export default function Scenes({
   step,
   branch,
   scene,
+  onInteract,
 }: {
   kind: string;
   step: number;
   branch?: string;
   scene?: Scene;
+  onInteract?: () => void;
 }) {
+  if (kind === "job-intake-cleaner") return <IntakeScene step={step} onInteract={onInteract} />;
   if (kind === "ipermit") return <PermitScene step={step} branch={branch} />;
   if (kind === "bea") return <BeaScene step={step} />;
   if (kind === "workforce") return <WorkforceScene step={step} />;

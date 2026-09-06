@@ -170,7 +170,7 @@
   {
     "slug": "job-intake-cleaner",
     "title": "Job Intake Cleaner",
-    "summary": "A job-intake workspace for the trades, with editable details, missing-information checks, follow-up drafts, and usable exports.",
+    "summary": "See how a customer message becomes an editable job card, then open the separate product for a fictional preview or connect your own OpenAI API key.",
     "category": "Operational software",
     "tags": [
       "AI interface",
@@ -179,15 +179,15 @@
     ],
     "featuredOrder": 5,
     "platform": "GitHub App",
-    "maturity": "Public demo · example mode",
-    "presentation": "external-live-app",
+    "maturity": "Product preview · bring your own OpenAI key",
+    "presentation": "animated-story",
     "problem": "Customer requests arrive as messy messages and phone notes. Contact details, service locations, and requested work can be incomplete or contradictory, making the next conversation harder to prepare.",
     "contribution": "CPL designed and built the intake experience, shared validation rules, editable job card, follow-up generation, export tools, and protected server-side extraction adapter.",
-    "solution": "Visitors can load six fictional scenarios, inspect an organized intake draft and its source evidence, correct details, prepare a follow-up, and copy, download, or print the current job card. The public demonstration uses prepared examples; live AI processing is disabled.",
+    "solution": "The separate product provides a fictional preview and a Settings path for a visitor-supplied OpenAI API key. Its workflow includes source evidence, editable details, required-information checks, follow-up drafts, and current-state exports. Live extraction requires a valid key and configured server protection. The portfolio separately illustrates the workflow with a fictional electrical request.",
     "outcomes": [
-      "Six fictional scenarios cover missing details, conflicting information, customer-stated urgency, and separate requests requiring review.",
-      "Corrections update the required-information checklist and can refresh the follow-up draft.",
-      "CSV, JSON, copy, and print outputs use the current edited record and retain source-mode and review-status labels."
+      "The portfolio walkthrough shows a missing service address and ambiguous Friday timing without inventing a date.",
+      "An operator correction updates the fictional follow-up and JSON export; human review remains visible.",
+      "The application implements copy, CSV, JSON, and print outputs for a current edited record."
     ],
     "showEvidenceSection": true,
     "technologies": [
@@ -198,18 +198,18 @@
       "OpenAI extraction adapter"
     ],
     "architecture": [
-      "Load a fictional customer message",
-      "Inspect the prepared job-intake draft and source evidence",
-      "Check required details and unresolved conflicts",
-      "Correct the job card and prepare a follow-up",
-      "Acknowledge review and export the current record"
+      "Paste a customer message or phone notes into the separate application",
+      "Extract a structured draft through the protected server-side adapter when configured",
+      "Review source evidence, required details, and conflicts",
+      "Correct the job card and prepare a relevant follow-up",
+      "Review and export the current record"
     ],
-    "evidence": "Example-mode interactions and exports were tested on desktop and mobile. The live AI adapter is implemented but has not been live-verified.",
+    "evidence": "The walkthrough is scripted, uses fictional data, and makes no AI calls. The extraction adapter and editing/export workflow are implemented. Bring-your-own-key live processing has not been independently verified; illustrated playback and a working preview do not establish live readiness.",
     "screenshots": [
       {
-        "src": "/images/job-intake-cleaner-demo.png",
+        "src": "/images/job-intake-cleaner-workspace.jpg",
         "alt": "Job Intake Cleaner showing a fictional electrical request and required-information checks with a missing service address",
-        "caption": "Actual application using a fictional electrical example in prepared-data mode; no live AI call."
+        "caption": "Actual deployed application on September 6, 2026, showing the fictional Casey Morgan sample and its missing-address check. Prepared sample data; no live AI call."
       }
     ],
     "repositoryUrl": "https://github.com/AaronStarrett/cpl-job-intake-cleaner",
@@ -218,7 +218,8 @@
     "access": "public",
     "launchMode": "new-tab",
     "embedAllowed": false,
-    "verificationDate": "2026-09-06"
+    "verificationDate": "2026-09-06",
+    "story": "job-intake-cleaner"
   },
   {
     "slug": "job-report-builder",

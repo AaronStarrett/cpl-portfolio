@@ -22,6 +22,12 @@ Set `maturity` to a truthful description: prototype, configured architecture, be
 
 Set `showEvidenceSection: false` to omit a project's optional fourth case-study section, including its outcomes and context note. It defaults to visible. `verificationDate` remains maintenance metadata; the site does not display editorial review-date labels.
 
+## Walkthrough and product together
+
+An `animated-story` entry may retain its verified `deployedUrl`, public source, and new-tab behavior. `primaryAction` opens the local walkthrough; `productAction` adds a distinct “Open [project title]” link on the card and detail page. Existing external-only projects keep their launch behavior. Source remains a separate secondary link. Do not pass example parameters or customer content to the product URL.
+
+Job Intake Cleaner uses a specific six-scene renderer adapted from its fictional Casey Morgan electrical fixture. The operator address, follow-up, and JSON download are local scripted interactions; playback never calls the paid endpoint. The shared StoryPlayer supplies pause, replay, scene navigation, reduced-motion behavior, and a complete text transcript. The product now supports a fictional preview and a visitor-supplied OpenAI key through Settings. Keep that requirement and any unverified live-processing status explicit until a separate deployed provider request is verified. Portfolio illustrates; application performs. Do not turn a prepared walkthrough into release evidence for the real product.
+
 ## Story configuration
 
 The shared player derives timing, scene count, progress, and controls from story data. iPermit and BEA use dedicated renderers. A new story can use the generic `process` renderer with scene titles, captions, durations in milliseconds, and optional `nodes` arrays. Add a story key and one content entry; no component edits are needed for that mode. The digital workforce has its own connected experience described below.

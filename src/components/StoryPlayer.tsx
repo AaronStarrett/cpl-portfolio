@@ -145,6 +145,7 @@ export default function StoryPlayer({ kind }: { kind: string }) {
             step={current.visual}
             branch={branch}
             scene={current.scene}
+            onInteract={() => setPlaying(false)}
           />
         </div>
         <nav className="scene-nav" aria-label="Story scenes">

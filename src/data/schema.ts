@@ -89,6 +89,12 @@ export function validateProjects(input: unknown[]) {
     throw Error("Duplicate project slug");
   return result.sort((a, b) => a.featuredOrder - b.featuredOrder);
 }
+/** A story's product destination is independent of its local walkthrough. */
+export function productAction(p: Project) {
+  return p.presentation === "animated-story" && p.story && p.deployedUrl
+    ? { href: p.deployedUrl, label: `Open ${p.title}`, external: true as const }
+    : null;
+}
 export function primaryAction(p: Project) {
   return p.presentation === "external-live-app" && p.deployedUrl
     ? {

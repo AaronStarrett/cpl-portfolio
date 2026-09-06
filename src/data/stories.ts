@@ -6,7 +6,7 @@ export type Scene = {
 };
 export type Story = {
   label: string;
-  renderer: "ipermit" | "bea" | "workforce" | "process";
+  renderer: "ipermit" | "bea" | "workforce" | "process" | "job-intake-cleaner";
   scenes: Scene[];
 };
 const scene = (title: string, caption: string, duration = 9000): Scene => ({
@@ -15,6 +15,18 @@ const scene = (title: string, caption: string, duration = 9000): Scene => ({
   duration,
 });
 export const stories: Record<string, Story> = {
+  "job-intake-cleaner": {
+    renderer: "job-intake-cleaner",
+    label: "Fictional electrical request · scripted walkthrough · no live AI call",
+    scenes: [
+      scene("A messy request arrives", "Casey Morgan asks to replace two ceiling fans and examine an outdoor outlet. A phone number is supplied, but the service address is absent and Friday has no reference date.", 9000),
+      scene("Details become a job card", "The prepared illustration separates the contact, phone, requested work, timing, and access notes. Exact source quotes support extracted details; they do not certify accuracy.", 9000),
+      scene("Show what needs attention", "Three of four required checks are satisfied. The address is missing. Friday stays in the customer's words; no calendar date is invented. A usable phone is enough—email is not also required.", 9000),
+      scene("Correct the service address", "The fictional operator supplies 24 Example Lane, Exampleton, NY 10001. This is marked as a user correction, not a source extraction. Try editing the address: the next draft and export use your current value. Human review remains outstanding.", 11000),
+      scene("Prepare the relevant follow-up", "With the service address entered, the follow-up asks which calendar date Friday means. Clearing the address adds an address question again. The stated phone preference is retained; nothing is sent or booked.", 9000),
+      scene("Export the current job card", "The fictional JSON download contains the current corrected address, original timing, an unresolved exact date, and draft review status. The actual application also implements copy, CSV, and printing. This walkthrough makes no provider calls.", 9000),
+    ],
+  },
   ipermit: {
     renderer: "ipermit",
     label: "Animated workflow walkthrough - illustrative data",

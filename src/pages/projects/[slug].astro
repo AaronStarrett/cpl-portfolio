@@ -5,7 +5,7 @@ import StoryPlayer from "../../components/StoryPlayer";
 import Gallery from "../../components/Gallery";
 import WorkforceExperience from "../../components/workforce/WorkforceExperience";
 import { projects } from "../../data/projects";
-import { primaryAction, type Project } from "../../data/schema";
+import { primaryAction, productAction, type Project } from "../../data/schema";
 export function getStaticPaths() {
   return projects.map((project) => ({
     params: { slug: project.slug },
@@ -14,6 +14,7 @@ export function getStaticPaths() {
 }
 const { project: p } = Astro.props as { project: Project };
 const action = primaryAction(p);
+const product = productAction(p);
 ---
 
 <Layout title={`${p.title} — Cyber Pirate Labs`} description={p.summary}>
@@ -26,6 +27,13 @@ const action = primaryAction(p);
         <p>{p.summary}</p><span class="maturity">{p.maturity}</span>
       </div>
     </header>
+    {product && (
+      <nav class="story-product-actions" aria-label="Walkthrough and product">
+        <a class="button" href="#walkthrough">Watch walkthrough ↓</a>
+        <a class="button product-launch" href={product.href} target="_blank" rel="noopener noreferrer">{product.label} ↗</a>
+        <p>The illustrated workflow runs here. The separate application opens in a new tab.</p>
+      </nav>
+    )}
     {
       p.story === "workforce" ? (
         <WorkforceExperience client:load />
@@ -157,11 +165,12 @@ const action = primaryAction(p);
       p.screenshots.length > 0 && (
         <section id="evidence" class="evidence-section">
           <>
-            <span class="eyebrow">{p.presentation === "external-live-app" ? "THE ACTUAL APPLICATION" : "THE ORIGINAL WORKFLOWS"}</span>
+            <span class="eyebrow">{p.presentation === "external-live-app" ? "THE ACTUAL APPLICATION" : p.deployedUrl ? "THE APPLICATION" : "THE ORIGINAL WORKFLOWS"}</span>
             <h2>Explore the actual build.</h2>
             <p>
               {p.presentation === "external-live-app"
                 ? "Screenshots captured from the deployed application. Open an image to zoom, pan, and inspect the details."
+                : p.deployedUrl ? "Application screenshots with fictional data. Read each caption for its context; open an image to inspect the details."
                 : "Complete diagrams, preserved as supplied. Open any image to zoom, pan, and inspect the details."}
             </p>
             <Gallery images={p.screenshots} client:visible />

@@ -1,8 +1,9 @@
 ---
 import { sitePath } from "../data/paths";
-import { primaryAction, type Project } from "../data/schema";
+import { primaryAction, productAction, type Project } from "../data/schema";
 const { project: p } = Astro.props as { project: Project };
 const action = primaryAction(p);
+const product = productAction(p);
 ---
 
 <article
@@ -162,7 +163,7 @@ const action = primaryAction(p);
           target={action.external ? "_blank" : undefined}
           rel={action.external ? "noopener noreferrer" : undefined}
           >{action.label} <span>{action.external ? "↗" : "→"}</span></a
-        ><a href={sitePath(`/projects/${p.slug}/#case-study`)}
+        >{product && <a class="product-text" href={product.href} target="_blank" rel="noopener noreferrer">{product.label} ↗</a>}<a href={sitePath(`/projects/${p.slug}/#case-study`)}
           >View case study</a
         >{
           p.repositoryUrl && (
