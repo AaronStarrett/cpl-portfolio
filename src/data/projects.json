@@ -100,21 +100,21 @@
   {
     "slug": "digital-workforce",
     "title": "CPL Digital Workforce",
-    "summary": "A Grok-based organization with clear roles, deliberate handoffs, and a human at the helm.",
+    "summary": "A company of digital employees. Named specialists, connected tools, and visible handoffs—with Aaron at the helm.",
     "category": "Digital workforce",
     "tags": ["Grok", "Organization design", "Shared knowledge"],
     "featuredOrder": 3,
     "platform": "Digital Workforce",
-    "maturity": "Configured architecture · task-scoped activation",
+    "maturity": "Grok digital workforce · interactive operating model",
     "presentation": "animated-story",
     "story": "workforce",
     "problem": "Separate AI conversations need shared context, clear responsibility, and an explicit point for human decisions.",
     "contribution": "Aaron structured digital-employee identities, role charters, reporting relationships, shared company knowledge, and operating policies into a documented organization.",
-    "solution": "A digital chief of staff routes a scoped request to a department manager. Specialists contribute, the manager consolidates, Aaron reviews, and shared records are updated in a separate stage before the organization returns to standby.",
+    "solution": "CEO Bot coordinates eight departments across CPL Solutions, CPL Products, and CPL Ventures. Managers assign bounded work, specialists prepare tangible outputs, and teams hand context forward. Connected tools support email, shared records, research, and engineering. Aaron retains final authority, and Quinn has a direct route for independent escalation.",
     "outcomes": [
-      "The documented organization includes executive, revenue, growth, product, delivery, client experience, and finance roles.",
-      "Filed research and planning outputs demonstrate role-based research, consolidation, and documentation.",
-      "Some specialists are still initializing and additional roles are planned. Configured identities remain dormant until a scoped assignment."
+      "31 assigned digital-employee roles span eight departments, with three additional roles in the expanded charter and ten cross-functional coordination groups.",
+      "Bots can read and send email on Aaron’s behalf and read/write within connected, authorized systems. Shared memory carries context between assignments.",
+      "Three interactive journeys show lead development, venture evaluation, and solution delivery through named roles, work products, human decisions, and a consolidated closeout."
     ],
     "technologies": [
       "Grok",
@@ -133,7 +133,7 @@
       "Jack · separate knowledge update",
       "Return to standby"
     ],
-    "evidence": "Architecture and filed outputs were reviewed September 5, 2026; underlying operating records are dated August 30. Role titles and tool availability do not prove live outreach, booked appointments, launched operations, or revenue.",
+    "evidence": "The organization and registration snapshot follow the August 30, 2026 operating records. Aaron confirmed email and authorized read/write capabilities on September 5. The interactive walkthrough uses synthetic tasks and documents to make the operating model explorable.",
     "screenshots": [],
     "verificationDate": "2026-09-05"
   },

@@ -3,7 +3,7 @@ import { sitePath } from "../../data/paths";
 import Layout from "../../layouts/Layout.astro";
 import StoryPlayer from "../../components/StoryPlayer";
 import Gallery from "../../components/Gallery";
-import Organization from "../../components/Organization";
+import WorkforceExperience from "../../components/workforce/WorkforceExperience";
 import { projects } from "../../data/projects";
 import { primaryAction, type Project } from "../../data/schema";
 export function getStaticPaths() {
@@ -26,7 +26,13 @@ const action = primaryAction(p);
         <p>{p.summary}</p><span class="maturity">{p.maturity}</span>
       </div>
     </header>
-    {p.story && <StoryPlayer kind={p.story} client:load />}
+    {
+      p.story === "workforce" ? (
+        <WorkforceExperience client:load />
+      ) : (
+        p.story && <StoryPlayer kind={p.story} client:load />
+      )
+    }
     {
       p.presentation === "external-live-app" && (
         <section class="external-project">
@@ -101,7 +107,6 @@ const action = primaryAction(p);
         )
       }
     </nav>
-    {p.story === "workforce" && <Organization client:visible />}
     <section class="case-study" id="case-study">
       <div class="case-section-label">
         <span class="eyebrow">BEHIND THE BUILD</span><h2>

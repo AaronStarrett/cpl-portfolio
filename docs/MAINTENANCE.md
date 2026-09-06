@@ -22,9 +22,22 @@ Set `maturity` to a truthful description: prototype, configured architecture, be
 
 ## Story configuration
 
-The shared player derives timing, scene count, progress, and controls from story data. The initial projects use dedicated `ipermit`, `bea`, and `workforce` renderers. A new story can use the generic `process` renderer with scene titles, captions, durations in milliseconds, and optional `nodes` arrays. Add a story key and one content entry; no component edits are needed for that mode. A distinctive new application-specific renderer can be added when requested.
+The shared player derives timing, scene count, progress, and controls from story data. iPermit and BEA use dedicated renderers. A new story can use the generic `process` renderer with scene titles, captions, durations in milliseconds, and optional `nodes` arrays. Add a story key and one content entry; no component edits are needed for that mode. The digital workforce has its own connected experience described below.
 
 The iPermit missing-field and unsupported-city paths have separate three-scene sequences ending in review. Do not let a review route continue to a successful execution scene.
+
+## Named digital workforce
+
+`src/components/workforce/WorkforceExperience.tsx` owns the three connected views, playback lifecycle, visible handoffs, and output desk. `OrganizationView`, `WorkforceProfile`, and `SystemsView` use the same normalized records. The workforce project route uses this experience; the earlier generic workforce story is retained only as a legacy renderer.
+
+- `src/data/workforce-model.ts` defines the shared contract.
+- `src/data/workforce-registry.ts` holds named roles, eight departments, ten overlapping coordination groups, source aliases, systems, collaborators, and memory areas. The default assignment roster contains 31 bots; the expanded charter contains 34. Aaron remains a separate human. Registration is a dated source snapshot, never changed by runtime animation.
+- `src/data/workforce-simulation.ts` holds synthetic artifacts and deterministic event timelines. Add scenarios and event branches here. Each assignment needs an objective, source context, required output, acceptance criteria, and next recipient. All referenced role/system/group/artifact IDs must resolve.
+- Update owner-confirmed capabilities from current evidence. Omit unknown connection claims. Keep registration, authorized capability, connection evidence, and simulated runtime as separate concepts. The September 5 owner confirmation supports email read/send and read/write within connected authorized scope; preserve the explicit Drive subtree and separate local-computer authority.
+- Every stage must stop before another stage starts, and at most four non-CEO bots may work simultaneously. Recorded mode uses registered ACTIVE roles. Full architecture may illustrate incomplete/planned roles with their original labels. Do not add providers, background routines, real contact data, or credentials to the public simulation.
+- Venture approval has four distinct branches. Rejection stops launch; amendments change scope; research requires a fresh decision. Failure preserves applied history and stops cleanly. Counters derive from visible events and artifacts.
+
+Run the registry and simulation tests together with the full project checks. Browser-test desktop/mobile, profile focus, search/filter combinations, charter counts, groups, all decision branches, both modes, failure/reset, output tracing, keyboard controls, and reduced motion. Playback must suspend offscreen or in a hidden document and clean up on unmount. Keep runtime/lifecycle test fixtures outside the public repository when they use private local harness dependencies.
 
 ## Embedding and optional media
 
