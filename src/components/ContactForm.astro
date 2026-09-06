@@ -1,0 +1,114 @@
+---
+import "../styles/contact-form.css";
+
+interface Props {
+  action?: string;
+  nextUrl?: string;
+  id?: string;
+}
+
+const {
+  action = "https://formsubmit.co/astarrett@cyberpiratelabs.com",
+  nextUrl,
+  id = "contact",
+} = Astro.props;
+---
+
+<section class="cpl-contact-section" id={id} aria-labelledby={`${id}-heading`}>
+  <div class="cpl-contact-intro">
+    <span class="cpl-contact-eyebrow">LET’S TALK</span>
+    <h2 id={`${id}-heading`}>Tell us what<br />you have in mind.</h2>
+    <p>
+      Share the process, project, or bottleneck you want to improve. We’ll use
+      your message to understand the work and explore the next step with you.
+    </p>
+    <div class="cpl-contact-note">
+      <span aria-hidden="true">↗</span>
+      <div>
+        <strong>A useful conversation starts here.</strong>
+        <span>Workflow automation, custom software, and connected systems.</span
+        >
+      </div>
+    </div>
+    <a class="cpl-contact-email" href="mailto:astarrett@cyberpiratelabs.com">
+      astarrett@cyberpiratelabs.com
+    </a>
+  </div>
+  <form
+    class="cpl-contact-form"
+    id={`${id}-form`}
+    action={action}
+    method="POST"
+    target="_self"
+    accept-charset="UTF-8"
+    aria-describedby={`${id}-required`}
+  >
+    <input
+      type="hidden"
+      name="_subject"
+      value="New portfolio inquiry — Cyber Pirate Labs"
+    />
+    <input type="hidden" name="_template" value="table" />
+    {nextUrl && <input type="hidden" name="_next" value={nextUrl} />}
+    <div class="cpl-contact-form-heading">
+      <h3>Start a conversation</h3>
+      <p id={`${id}-required`}>Name, email, and message are required.</p>
+    </div>
+    <div class="cpl-contact-fields">
+      <div class="cpl-contact-field">
+        <label for={`${id}-name`}>Your name</label>
+        <input
+          id={`${id}-name`}
+          name="name"
+          type="text"
+          autocomplete="name"
+          maxlength="120"
+          placeholder="Full name"
+          required
+        />
+      </div>
+      <div class="cpl-contact-field">
+        <label for={`${id}-email`}>Email address</label>
+        <input
+          id={`${id}-email`}
+          name="email"
+          type="email"
+          autocomplete="email"
+          inputmode="email"
+          maxlength="254"
+          placeholder="you@company.com"
+          required
+        />
+      </div>
+      <div class="cpl-contact-field cpl-contact-field-wide">
+        <label for={`${id}-company`}>Company <span>(optional)</span></label>
+        <input
+          id={`${id}-company`}
+          name="company"
+          type="text"
+          autocomplete="organization"
+          maxlength="160"
+          placeholder="Company or organization"
+        />
+      </div>
+      <div class="cpl-contact-field cpl-contact-field-wide">
+        <label for={`${id}-message`}
+          >What would you like to build or improve?</label
+        >
+        <textarea
+          id={`${id}-message`}
+          name="message"
+          rows="6"
+          maxlength="5000"
+          placeholder="A little context about the work, the goal, and what you need help with…"
+          required></textarea>
+      </div>
+    </div>
+    <div class="cpl-contact-submit-row">
+      <p>We’ll reply to the email address you provide.</p>
+      <button class="cpl-contact-submit" type="submit">
+        Send message <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import ContactForm from "../components/ContactForm.astro";
 import { projects } from "../data/projects";
 import { sitePath } from "../data/paths";
 const categories = [...new Set(projects.map((p) => p.category))];
@@ -21,16 +22,17 @@ const categories = [...new Set(projects.map((p) => p.category))];
     </div><div class="hero-aside brand-stage">
       <div class="stage-topline">
         <span class="stage-indicator"></span> CYBER PIRATE LABS <span
-          >01 / THE STUDIO</span>
+          >01 / THE STUDIO</span
+        >
       </div>
       <div class="brand-platform">
         <div class="platform-lines" aria-hidden="true"></div>
         <div class="logo-plaque">
           <img
-            src={sitePath("/images/cpl-logo-dark.png")}
-            width="1024"
-            height="1024"
-            alt="Cyber Pirate Labs — green geometric shield and wordmark on dark navy"
+            src={sitePath("/images/cpl-logo-c.png")}
+            width="1254"
+            height="1254"
+            alt="Cyber Pirate Labs — pirate and circuit logo in emerald, teal, and navy"
             fetchpriority="high"
           />
         </div>
@@ -96,11 +98,14 @@ const categories = [...new Set(projects.map((p) => p.category))];
         From a focused workflow to a custom workspace, CPL builds for direct
         customers and with delivery partners. Implementation and ongoing support
         are scoped for each engagement.
-      </p><a class="button" href="mailto:Sales@CyberPirateLabs.com"
-        >Start a conversation ↗</a
-      >
+      </p><a class="button" href="#contact">Start a conversation ↗</a>
     </div>
-  </section></Layout
+  </section><ContactForm
+    nextUrl={new URL(
+      sitePath("/thanks/"),
+      Astro.site ?? "https://cpl-portfolio.pages.dev",
+    ).href}
+  /></Layout
 >
 <script>
   let category = "all";

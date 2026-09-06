@@ -23,6 +23,12 @@ npm run build
 
 The static output is `dist`. No backend, database, CMS subscription, or visitor credentials are needed. The stories make no calls to Zoho, n8n, UiPath, Grok, BEA, or email services.
 
+## Contact form
+
+The header and footer contact links open the homepage form at `/#contact`. `src/components/ContactForm.astro` posts inquiries to FormSubmit for delivery to `astarrett@cyberpiratelabs.com`, with the visitor's email used for replies. Native required-field and email validation run before submission. FormSubmit handles spam verification and then returns visitors to `/thanks/`.
+
+FormSubmit requires one-time mailbox activation after the first submission. Activate its email for the production portfolio origin before relying on delivery. Keep the default CAPTCHA enabled. A real production submission and inbox receipt are the delivery check; a build or confirmation page alone cannot establish email receipt. See [FormSubmit's setup guide](https://formsubmit.co/).
+
 ## Project experiences
 
 - iPermit: an eight-scene walkthrough plus two short review branches and four original workflow screenshots.
@@ -44,7 +50,7 @@ Cloudflare Pages with Git integration is the chosen hosting destination. Cloudfl
 
 Only portfolio code and cleared public assets belong in this repository. Private source checkouts, customer data, the build brief, and research notes are excluded. No private application code was copied. No license grant is implied by repository visibility.
 
-The site uses the approved CPL light palette and the existing dark shield-and-wordmark logo without altering its proportions or pixels. Its dark navy panel gives the green logo contrast while the page remains light. The social card uses a text wordmark and a generated workflow illustration. The four supplied iPermit screenshots are unchanged. Captions describe exactly what their evidence establishes.
+The site uses the CPL light palette and the owner-selected pirate-and-circuit logo (concept C), in emerald, teal, and navy. Header, hero, and footer display the logo without a surrounding box. The original dark logo remains preserved as a separate asset. The social card uses a text wordmark and a generated workflow illustration. The four supplied iPermit screenshots are unchanged.
 
 ## Accessibility and motion
 

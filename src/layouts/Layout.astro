@@ -61,31 +61,31 @@ const published = origin && origin.hostname !== "localhost";
         aria-label="Cyber Pirate Labs home"
         ><img
           class="brand-artwork"
-          src={sitePath("/images/cpl-logo-dark.png")}
-          width="1024"
-          height="1024"
-          alt="Cyber Pirate Labs — dark shield and wordmark"
+          src={sitePath("/images/cpl-logo-c.png")}
+          width="1254"
+          height="1254"
+          alt="Cyber Pirate Labs — pirate and circuit logo"
         /><span>CYBER PIRATE LABS<small>BUILD WITH INTENT.</small></span></a
       ><nav aria-label="Main navigation">
         <a href={sitePath("/#work")}>Selected work</a><a
           class="contact-link"
-          href="mailto:Sales@CyberPirateLabs.com">Let's talk <span>↗</span></a
+          href={sitePath("/#contact")}>Let's talk <span>↗</span></a
         >
       </nav>
     </header><main id="main"><slot /></main><footer class="site-footer">
       <a class="wordmark" href={sitePath("/")}
         ><img
           class="brand-artwork"
-          src={sitePath("/images/cpl-logo-dark.png")}
-          width="1024"
-          height="1024"
-          alt="Cyber Pirate Labs — dark shield and wordmark"
+          src={sitePath("/images/cpl-logo-c.png")}
+          width="1254"
+          height="1254"
+          alt="Cyber Pirate Labs — pirate and circuit logo"
         /><span
           >CYBER PIRATE LABS<small>Designed & built by Aaron Starrett</small
           ></span
         ></a
       ><span>Thoughtful systems. Practical possibilities.</span><a
-        href="mailto:Sales@CyberPirateLabs.com">Start a conversation ↗</a
+        href={sitePath("/#contact")}>Start a conversation ↗</a
       >
     </footer></body
   >

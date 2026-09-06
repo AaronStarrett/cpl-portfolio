@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { sitePath } from "../data/paths";
+---
+
+<Layout title="Thanks for reaching out — Cyber Pirate Labs">
+  <section class="contact-thanks">
+    <span class="eyebrow">LET’S TALK</span>
+    <h1>Thanks for<br /><span>reaching out.</span></h1>
+    <p>
+      Your message has been submitted to Cyber Pirate Labs. We’ll reply to the
+      email address you provided.
+    </p>
+    <a class="button" href={sitePath("/#work")}
+      >Explore our work <span aria-hidden="true">↗</span></a
+    >
+  </section>
+</Layout>
+
+<style>
+  .contact-thanks {
+    width: min(760px, calc(100% - 48px));
+    margin: 100px auto 120px;
+    min-height: 40vh;
+  }
+  h1 {
+    margin: 24px 0;
+    font-size: clamp(44px, 7vw, 82px);
+    line-height: 1.06;
+    letter-spacing: -0.055em;
+    color: #123246;
+  }
+  h1 span {
+    color: #087b7c;
+  }
+  p {
+    max-width: 480px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #476578;
+  }
+</style>
