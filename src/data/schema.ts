@@ -1,5 +1,12 @@
 import { sitePath } from "./paths";
 import { z } from "zod";
+const localImage = z.object({
+  src: z
+    .string()
+    .regex(/^\/images\/[a-z0-9-][a-z0-9.-]*\.(?:png|jpg|jpeg|webp|avif)$/)
+    .refine((v) => !v.includes("..")),
+  alt: z.string().min(10),
+});
 const https = z
   .url()
   .refine(
@@ -39,13 +46,12 @@ export const projectSchema = z
     technologies: z.array(z.string()),
     architecture: z.array(z.string()),
     evidence: z.string().min(10).optional(),
+    thumbnail: localImage.extend({
+      width: z.number().int().positive(),
+      height: z.number().int().positive(),
+    }).optional(),
     screenshots: z.array(
-      z.object({
-        src: z
-          .string()
-          .regex(/^\/images\/[a-z0-9-][a-z0-9.-]*\.(?:png|jpg|jpeg|webp|avif)$/)
-          .refine((v) => !v.includes("..")),
-        alt: z.string().min(10),
+      localImage.extend({
         caption: z.string().min(10),
       }),
     ),

@@ -12,7 +12,7 @@ const product = productAction(p);
   data-search={`${p.title} ${p.summary} ${p.tags.join(" ")}`.toLowerCase()}
 >
   <a
-    class="project-art"
+    class:list={["project-art", { "has-product-thumbnail": p.thumbnail }]}
     href={action.href}
     target={action.external ? "_blank" : undefined}
     rel={action.external ? "noopener noreferrer" : undefined}
@@ -30,7 +30,18 @@ const product = productAction(p);
       >
     </div>
     {
-      p.story === "ipermit" ? (
+      p.thumbnail ? (
+        <div class="product-thumbnail">
+          <img
+            src={sitePath(p.thumbnail.src)}
+            alt={p.thumbnail.alt}
+            width={p.thumbnail.width}
+            height={p.thumbnail.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      ) : p.story === "ipermit" ? (
         <div class="permit-thumbnail">
           <>
             <div class="thumb-node zoho">
@@ -123,23 +134,6 @@ const product = productAction(p);
             </div>
           </>
         </div>
-      ) : p.slug === "starrett-home-improvement" ? (
-        <div class="starrett-thumbnail">
-          <>
-            <div class="starrett-wordmark">
-              STARRETT<small>HOME IMPROVEMENT</small>
-            </div>
-            <span class="eyebrow">LEAD COMMAND CENTER</span>
-            <h3>
-              AI agents find
-              <br />
-              new leads every day.
-            </h3>
-            <div class="app-link-pill">
-              Open the actual application <span>↗</span>
-            </div>
-          </>
-        </div>
       ) : (
         <div class="generic-thumbnail">
           <>
@@ -176,3 +170,61 @@ const product = productAction(p);
     </div>
   </div>
 </article>
+
+<style>
+  .project-art.has-product-thumbnail {
+    height: auto;
+    background: #f0f8fa;
+  }
+
+  .has-product-thumbnail::before,
+  .has-product-thumbnail::after {
+    display: none;
+  }
+
+  .has-product-thumbnail .art-label {
+    position: relative;
+    inset: auto;
+    min-height: 44px;
+    padding: 10px 58px 10px 16px;
+    align-items: center;
+    gap: 12px;
+    background: #f0f8fa;
+  }
+
+  .product-thumbnail {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-top: 1px solid #c8e5e6;
+    background: #fff;
+  }
+
+  .product-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .card-job-report-builder .product-thumbnail img {
+    object-position: bottom;
+  }
+
+  .has-product-thumbnail .art-launch {
+    top: 7px;
+    right: 12px;
+    bottom: auto;
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+    z-index: 3;
+  }
+
+  @media (max-width: 620px) {
+    .has-product-thumbnail .art-label {
+      padding-left: 12px;
+      gap: 8px;
+    }
+  }
+</style>

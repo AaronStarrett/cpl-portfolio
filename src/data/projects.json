@@ -129,6 +129,12 @@
   },
   {
     "slug": "starrett-home-improvement",
+    "thumbnail": {
+      "src": "/images/starrett-lead-dashboard.jpg",
+      "alt": "Starrett Lead Command Center with pipeline summary, market filters, and lead search.",
+      "width": 1265,
+      "height": 712
+    },
     "title": "Starrett Home Improvement",
     "summary": "AI agents search the web daily for high-value leads, score and add them automatically, and handle outreach. One workspace tracks their progress.",
     "category": "AI lead generation",
@@ -169,6 +175,12 @@
   },
   {
     "slug": "job-intake-cleaner",
+    "thumbnail": {
+      "src": "/images/job-intake-cleaner-workspace.jpg",
+      "alt": "Job Intake Cleaner showing a fictional customer request beside its editable job card and missing-address check.",
+      "width": 1265,
+      "height": 712
+    },
     "title": "Job Intake Cleaner",
     "summary": "See how a customer message becomes an editable job card, then open the separate product for a fictional preview or connect your own OpenAI API key.",
     "category": "Operational software",
@@ -223,6 +235,12 @@
   },
   {
     "slug": "job-report-builder",
+    "thumbnail": {
+      "src": "/images/job-report-builder-demo.png",
+      "alt": "Job Report Builder photo organizer beside a report preview with illustrated before-and-after sample images.",
+      "width": 1440,
+      "height": 1000
+    },
     "title": "Before-and-After Job Report Builder",
     "summary": "Turn scattered job photos and notes into an ordered visual report, with local editing and browser printing or Save as PDF.",
     "category": "Operational software",

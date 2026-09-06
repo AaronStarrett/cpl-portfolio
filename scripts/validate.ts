@@ -5,7 +5,7 @@ for (const p of projects) {
   if (p.story && !stories[p.story]) throw Error(`Unknown story: ${p.story}`);
 }
 for (const p of projects)
-  for (const image of p.screenshots)
+  for (const image of [...p.screenshots, ...(p.thumbnail ? [p.thumbnail] : [])])
     if (!existsSync(`public${image.src}`))
       throw Error(`Missing asset: ${image.src}`);
 console.log(
