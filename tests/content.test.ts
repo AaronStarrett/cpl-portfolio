@@ -17,10 +17,10 @@ const base = {
   repositoryUrl: undefined,
   repositoryPublic: undefined,
 };
-test("a fifth GPT Site requires no repository and launches its exact deployed URL", () => {
+test("an additional GPT Site requires no repository and launches its exact deployed URL", () => {
   const result = validateProjects([...projects, base]);
-  assert.equal(result.length, 5);
-  assert.deepEqual(primaryAction(result[4]), {
+  assert.equal(result.length, projects.length + 1);
+  assert.deepEqual(primaryAction(result.find((project) => project.slug === base.slug)!), {
     href: base.deployedUrl,
     label: "Open live site",
     external: true,

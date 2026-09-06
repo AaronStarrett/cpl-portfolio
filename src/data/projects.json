@@ -166,5 +166,58 @@
     "launchMode": "new-tab",
     "embedAllowed": false,
     "verificationDate": "2026-09-05"
+  },
+  {
+    "slug": "job-intake-cleaner",
+    "title": "Job Intake Cleaner",
+    "summary": "A job-intake workspace for the trades, with editable details, missing-information checks, follow-up drafts, and usable exports.",
+    "category": "Operational software",
+    "tags": [
+      "AI interface",
+      "Operations",
+      "Human review"
+    ],
+    "featuredOrder": 5,
+    "platform": "GitHub App",
+    "maturity": "Public demo · example mode",
+    "presentation": "external-live-app",
+    "problem": "Customer requests arrive as messy messages and phone notes. Contact details, service locations, and requested work can be incomplete or contradictory, making the next conversation harder to prepare.",
+    "contribution": "CPL designed and built the intake experience, shared validation rules, editable job card, follow-up generation, export tools, and protected server-side extraction adapter.",
+    "solution": "Visitors can load six fictional scenarios, inspect an organized intake draft and its source evidence, correct details, prepare a follow-up, and copy, download, or print the current job card. The public demonstration uses prepared examples; live AI processing is disabled.",
+    "outcomes": [
+      "Six fictional scenarios cover missing details, conflicting information, customer-stated urgency, and separate requests requiring review.",
+      "Corrections update the required-information checklist and can refresh the follow-up draft.",
+      "CSV, JSON, copy, and print outputs use the current edited record and retain source-mode and review-status labels."
+    ],
+    "showEvidenceSection": true,
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Cloudflare Workers",
+      "Zod",
+      "OpenAI extraction adapter"
+    ],
+    "architecture": [
+      "Load a fictional customer message",
+      "Inspect the prepared job-intake draft and source evidence",
+      "Check required details and unresolved conflicts",
+      "Correct the job card and prepare a follow-up",
+      "Acknowledge review and export the current record"
+    ],
+    "evidence": "Example-mode interactions and exports were tested on desktop and mobile. The live AI adapter is implemented but has not been live-verified.",
+    "screenshots": [
+      {
+        "src": "/images/job-intake-cleaner-demo.png",
+        "alt": "Job Intake Cleaner showing a fictional electrical request and required-information checks with a missing service address",
+        "caption": "Actual application using a fictional electrical example in prepared-data mode; no live AI call."
+      }
+    ],
+    "repositoryUrl": "https://github.com/AaronStarrett/cpl-job-intake-cleaner",
+    "repositoryPublic": true,
+    "deployedUrl": "https://cpl-job-intake-cleaner.astarrett.workers.dev",
+    "access": "public",
+    "launchMode": "new-tab",
+    "embedAllowed": false,
+    "verificationDate": "2026-09-06"
   }
 ]

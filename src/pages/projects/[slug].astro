@@ -157,11 +157,12 @@ const action = primaryAction(p);
       p.screenshots.length > 0 && (
         <section id="evidence" class="evidence-section">
           <>
-            <span class="eyebrow">THE ORIGINAL WORKFLOWS</span>
+            <span class="eyebrow">{p.presentation === "external-live-app" ? "THE ACTUAL APPLICATION" : "THE ORIGINAL WORKFLOWS"}</span>
             <h2>Explore the actual build.</h2>
             <p>
-              Complete diagrams, preserved as supplied. Open any image to zoom,
-              pan, and inspect the details.
+              {p.presentation === "external-live-app"
+                ? "Screenshots captured from the deployed application. Open an image to zoom, pan, and inspect the details."
+                : "Complete diagrams, preserved as supplied. Open any image to zoom, pan, and inspect the details."}
             </p>
             <Gallery images={p.screenshots} client:visible />
           </>
